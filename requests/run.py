@@ -56,17 +56,6 @@ class Requests_vehicle():
                         ls1.append(data['link']['path'])
         return ls1
 
-    def process_layer2(self, records):
-        result_list = []
-        for model in records:
-            print(records[model])
-            result = self.get_request(
-                url=records[model],
-                # mdl=model
-            )
-            result_list.append(result)
-            # print(result['data']['records'])
-        return result_list
 
     def run(self):
         '''

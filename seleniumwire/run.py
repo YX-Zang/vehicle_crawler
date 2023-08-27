@@ -33,7 +33,6 @@ class Crawler():
             ).click()
             time.sleep(2)
 
-
     def run(self):
         self.driver.get(self.domain)
 
@@ -43,10 +42,7 @@ class Crawler():
         self.action()
 
 
-
-
 if __name__ == '__main__':
     target_url = 'https://www.partslink24.com'
     cr = Crawler(target_url)
     cr.run()
-

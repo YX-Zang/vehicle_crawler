@@ -27,28 +27,11 @@ class Crawler(Playwrighr_tools):
     def check_cookie_btn(self):
         self.page.click("text=Accept only essential services")
 
-    def process_records(self, records):
-        ls1 = []
-        if isinstance(records, dict):
-            records = [records]
-        for item in records:
-            if item.get('data', {}).get('records'):
-                for data in item['data']['records']:
-                    if data.get('link') and not data.get('id', '').startswith('_'):
-                        ls1.append(data['link']['path'])
-        return ls1
-
     def on_response(self, response):
         try:
             pprint(response.json())
         except Exception:
             pass
-
-    def on_request(self, request):
-        pprint('--------start---------')
-        pprint(request.url)
-        pprint(request.post_data)
-        pprint('--------start---------')
 
     def test_action(self):
         # click BMW icon
@@ -70,10 +53,7 @@ class Crawler(Playwrighr_tools):
 
         self.check_cookie_btn()
 
-        # self.test_action()
-        self.collect_link_action()
-        print(self.queue_result.qsize())
-        pprint('~')
+        self.test_action()
 
 
 if __name__ == '__main__':
