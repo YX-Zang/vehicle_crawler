@@ -1,0 +1,5 @@
+bs4
+requests
+playwright==1.29.0
+selenium-wire==5.1.0
+undetected-chromedriver==3.5.3
